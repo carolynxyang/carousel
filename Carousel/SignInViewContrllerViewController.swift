@@ -18,9 +18,6 @@ class SignInViewContrllerViewController: UIViewController {
     
     
     @IBOutlet weak var signinButton: UIButton!
-    
-    var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0,0, 50, 50)) as UIActivityIndicatorView
-    
 
     
     func showAlertWithOK(alertTitle:String, alertText:String){
@@ -79,7 +76,6 @@ class SignInViewContrllerViewController: UIViewController {
         }
         
         //Authentication
-        //activityIndicator.startAnimating()
         let alertController = showAlertWithText("Signing in...")
         if (emailTextField.text == "cxy@gmail.com" && passwordTextField.text == "1234"){
             delay(2){
@@ -106,14 +102,6 @@ class SignInViewContrllerViewController: UIViewController {
         
         signinScrollView.contentSize = CGSize(width: 320, height: 494)
         
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
-        activityIndicator.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
-        
-        activityIndicator.autoresizingMask = [.FlexibleHeight,.FlexibleWidth]
-        activityIndicator.frame = self.view.frame
-        self.view.addSubview(activityIndicator)
     }
     
     override func didReceiveMemoryWarning() {
